@@ -6,6 +6,7 @@ const db = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const athleteRoutes = require("./routes/athleteRoutes");
 const adminRoutes = require("./routes/adminRoutes");
+const matchStatsRoutes = require("./routes/matchStatsRoutes");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/auth", authRoutes);
 app.use("/api/athletes", athleteRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/match-stats", matchStatsRoutes);
 
 // Root route
 app.get("/", (req, res) => {
